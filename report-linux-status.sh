@@ -18,5 +18,5 @@ curl \
   --data "{ \"state\": \"$TEST_STATUS\", \
            \"target_url\": \"$CIRCLE_BUILD_URL\", \
            \"description\": \"$TEST_DESCRIPTION\", \
-           \"context\": \"circleci/os-x\" }" \
+           \"context\": \"ci/circleci-os-x\" }" \
   --request POST "$GITHUB_STATUS_URL"
