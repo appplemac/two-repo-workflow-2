@@ -13,8 +13,8 @@ if [[ -f $TEST_FAILURE_FILE ]]
     TEST_DESCRIPTION="OS X tests failed"
 fi
 
-curl
-  --header "Content-Type: application/json"
+curl \
+  --header "Content-Type: application/json" \
   --data "{ 'state': '$TEST_STATUS', \
            'target_url': '$CIRCLE_BUILD_URL', \
            'description': '$TEST_DESCRIPTION', \
