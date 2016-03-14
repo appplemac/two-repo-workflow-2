@@ -1,0 +1,18 @@
+# OS X project
+# $LINUX_SHA1 set via parameterised builds API endpoint
+
+machine:
+  environment:
+    LINUX_REPO: "two-repo-workflow-linux"
+
+dependencies:
+  pre:
+    - git clone "git@github.com:appplemac/two-repo-workflow-linux.git"
+    - cd $LINUX_REPO && git checkout $LINUX_SHA1
+
+test:
+  override:
+    - echo "skipping tests" || touch test-failure.txt:
+        pwd: $LINUX_REPO
+  post:
+    - bash report-linux-status.sh
