@@ -17,8 +17,8 @@ fi
 
 curl \
   --header "Content-Type: application/json" \
-  --data "{ 'state': '$TEST_STATUS', \
-           'target_url': '$CIRCLE_BUILD_URL', \
-           'description': '$TEST_DESCRIPTION', \
-           'context': 'circleci/os-x' }" \
+  --data "{ \"state\": \"$TEST_STATUS\", \
+           \"target_url\": \"$CIRCLE_BUILD_URL\", \
+           \"description\": \"$TEST_DESCRIPTION\", \
+           \"context\": \"circleci/os-x\" }" \
   --request POST "$GITHUB_STATUS_URL"
