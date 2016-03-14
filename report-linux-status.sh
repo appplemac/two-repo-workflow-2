@@ -1,8 +1,6 @@
 #!/bin/bash
 # relies on $LINUX_REPO and $LINUX_SHA1 being set
 
-set -x
-
 TEST_FAILURE_FILE="$LINUX_REPO/test-failure.txt"
 GITHUB_STATUS_URL="https://api.github.com/repos/appplemac/two-repo-workflow-linux/statuses/$LINUX_SHA1?access_token=$GITHUB_TOKEN"
 
